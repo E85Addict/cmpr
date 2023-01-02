@@ -1,5 +1,6 @@
 #![no_main]
 #![feature(slice_as_chunks)]
+#![feature(let_chains)]
 
 use cmpr::{cprintln, Mmap, RawArgs};
 use std::{fs::File, os::unix::prelude::AsRawFd, path::Path};
