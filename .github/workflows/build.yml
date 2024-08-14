@@ -18,7 +18,7 @@ jobs:
             target: x86_64-linux-android
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Setup NDK
         run: |
           N="android-ndk-r26c"
@@ -43,7 +43,7 @@ jobs:
           mv -f ./target/${{ matrix.target }}/release/cmpr ./output/cmpr-${{ matrix.arch }}
 
       - id: date
-        run: echo ::set-output name=date::$(date +'%Y%m%d')
+        run: echo "date=$(date +'%Y%m%d')" >> $GITHUB_OUTPUT
 
       - name: Upload
         uses: svenstaro/upload-release-action@v2
